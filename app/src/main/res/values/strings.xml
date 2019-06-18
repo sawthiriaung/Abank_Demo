@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Abank_Demo</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!--Login-->
+    <string name="login_dummy">Login Dummy</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="textRegister">Register Now</string>
+    <string name="textForgetPassword">Forget Password ?</string>
+    <string name="logo">LOGO</string>
+    <string name="amount">1,000,000,000</string>
+    <string name="contact">contact</string>
+    <string name="black">black</string>
+    <string name="blue">blue</string>
+    <string name="green">green</string>
+    <string name="cyan">cyan</string>
+    <string name="gray">gray</string>
+    <string name="lightgreen">lightgreen</string>
+    <string name="red">red</string>
+    <string name="purple">purple</string>
+    <string name="orange">orange</string>
+    <string name="forwhite">forwhite</string>
+</resources>
