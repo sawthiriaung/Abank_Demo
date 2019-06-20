@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 
 import com.nmh.speaktotext.abank_demo.BR;
 import com.nmh.speaktotext.abank_demo.ui.main.MainActivity;
@@ -48,6 +49,10 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSplashViewModel.setNavigator(this);
+
+        //full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         handler = new Handler();
         handler.postDelayed(new Runnable() {

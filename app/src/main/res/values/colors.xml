@@ -12,6 +12,7 @@
     <color name="red">#F70202</color>
     <color name="green">#08EE11</color>
     <color name="blue">#1835DA</color>
-    <color name="purple">#BE49DD</color>
-    <color name="darkpurple">#8947dd</color>
+    <color name="lightpurple">#BE49DD</color>
+    <color name="purple">#8947dd</color>
+    <color name="darkpurple">#461e65</color>
 </resources>

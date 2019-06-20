@@ -22,4 +22,14 @@
     <string name="purple">purple</string>
     <string name="orange">orange</string>
     <string name="forwhite">forwhite</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="billpayment">Bill Payment</string>
+    <string name="transfer">Transfer</string>
+    <string name="topup">Topup</string>
+    <string name="history">History</string>
+    <string name="scan">Scan</string>
+    <string name="managepyaee">Manage Pyaee</string>
+    <string name="cashin">Cash In</string>
+    <string name="cashout">Cash Out</string>
+
 </resources>

@@ -65,6 +65,4 @@ dependencies {
     //dots
     implementation 'com.github.florent37:mylittlecanvas:2.0.2'
 
-    //circle
-    implementation 'com.github.pavlospt:circleview:1.3'
 }
