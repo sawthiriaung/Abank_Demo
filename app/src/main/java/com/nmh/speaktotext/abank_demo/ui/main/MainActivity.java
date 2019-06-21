@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
     SliderAdapter adapter;
     TabLayout indicator;
 
-    List<Integer> color;
-    List<String> colorName;
+    List<Integer> accountNo;
+    List<String> accountName;
+    List<Integer> amount;
+    List<String> amountName;
 
     public static Intent newIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
@@ -36,28 +38,39 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_card);
 
         floatingActionButton = findViewById(R.id.floatingActionButton);
 
         viewPager = findViewById(R.id.viewPager);
         indicator= findViewById (R.id.indicator);
 
-        color = new ArrayList<>();
-        color.add(1000000000);
-        color.add(2000000000);
-        color.add(300000000);
+        accountNo = new ArrayList<>();
+        accountNo.add(000011112222333);
+        accountNo.add(000000000000000);
+        accountNo.add(000011112222200);
 
-        colorName = new ArrayList<>();
-        colorName.add("Saving Balance");
-        colorName.add("Current Balance");
-        colorName.add("Total Balance");
 
-        viewPager.setAdapter(new SliderAdapter(this, color, colorName));
+        accountName = new ArrayList<>();
+        accountName.add("Saving Account");
+        accountName.add("Current Account");
+        accountName.add("ATM Account");
+
+        amount = new ArrayList<>();
+        amount.add(1000000000);
+        amount.add(2000000000);
+        amount.add(1200000000);
+
+        amountName = new ArrayList<>();
+        accountName.add("Total Amount");
+        accountName.add("Current Amount");
+        accountName.add("ATM Amount");
+
+        viewPager.setAdapter(new SliderAdapter(this, accountNo, accountName, amount, amountName));
         indicator.setupWithViewPager(viewPager, true);
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new SliderTimer(), 4000, 6000);
+        timer.scheduleAtFixedRate(new SliderTimer(), 4000, 4000);
     }
 
     private class SliderTimer extends TimerTask {
@@ -67,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (viewPager.getCurrentItem() < colorName.size() - 1) {
+                    if (viewPager.getCurrentItem() < amountName.size() - 1) {
                         viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
                     } else {
                         viewPager.setCurrentItem(0);

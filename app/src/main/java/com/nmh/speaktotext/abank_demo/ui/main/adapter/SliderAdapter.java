@@ -15,20 +15,27 @@ import java.util.List;
 
 public class SliderAdapter extends PagerAdapter {
     private Context context;
-    private List<Integer> color;
-    private List<String> colorName;
+    private List<Integer> accountNo;
+    private List<String> accountName;
+    private List<Integer> amount;
+    private List<String> amountName;
 
-    public SliderAdapter(Context context, List<Integer> color, List<String> colorName)
+    public SliderAdapter(Context context, List<Integer> accountNo,
+                         List<String> accountName, List<Integer> amount, List<String> amountName)
     {
         this.context = context;
-        this.color = color;
-        this.colorName = colorName;
+        this.accountNo = accountNo;
+        this.accountName = accountName;
+        this.amount = amount;
+        this.amountName = amountName;
     }
 
     @Override
     public int getCount() {
-        return color.size();
+        return amount.size();
     }
+
+
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
@@ -40,12 +47,17 @@ public class SliderAdapter extends PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.item_slider, null);
 
-        TextView textView = (TextView) view.findViewById(R.id.textView);
-        TextView textView1 = (TextView) view.findViewById(R.id.textView1);
+        TextView text_accountNO = (TextView) view.findViewById(R.id.account);
+        TextView text_accountName = (TextView) view.findViewById(R.id.accountName);
+        TextView text_amount = (TextView) view.findViewById(R.id.amount);
+        TextView text_amountName= (TextView) view.findViewById(R.id.amountName);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.linearLayout);
 
-        textView.setText(colorName.get(position));
-        textView1.setText(color.get(position).toString());
+        text_accountNO.setText(Integer.toString(accountNo.get(position)));
+        text_accountName.setText(accountName.get(position));
+        text_amount.setText(Integer.toString(amount.get(position)));
+        text_amountName.setText(amountName.get(position));
+        
 
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view, 0);
