@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F04343">
+    android:background="@color/backgroundpurple">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
+        android:background="@color/backgroundpurple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="10dp">
 
@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_contact_phone_black_24dp"
+                android:contentDescription="@string/contact"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textView19"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -37,8 +38,8 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello World"
-                android:textSize="25sp"
+                android:text="@string/dashboard"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton21"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -50,8 +51,10 @@
                 android:id="@+id/imageButton21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/ic_notifications_active_black_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/common_google_play_services_notification_channel_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView19"
@@ -62,47 +65,300 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
+        app:cardBackgroundColor="@color/backgroundpurple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:cardBackgroundColor="@color/darkpurple">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
-        <LinearLayout
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:orientation="vertical">
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal" />
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="3dp"
+            app:tabBackground="@drawable/indicator_selector"
+            app:tabIndicatorHeight="0dp" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/textView22"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Saving Account"-->
-            <!--android:layout_gravity="center_horizontal"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/textView23"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="0000111122223333"-->
-            <!--android:layout_gravity="center_horizontal"/>-->
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginTop="15dp"/>
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                app:tabBackground="@drawable/indicator_selector"/>
-        </LinearLayout>
     </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/backgroundpurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#5f2190"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/white"
+                    app:borderWidth="1dp"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton10"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#5f2190"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/white"
+                    app:borderWidth="1dp"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton11"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton13"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#5f2190"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/white"
+                    app:borderWidth="1dp"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton12"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton10"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#5f2190"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/white"
+                    app:borderWidth="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton11"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/billpayment"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton13"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton13"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton13" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/billpayment"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton10"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton10"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton10" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/billpayment"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton11"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton11"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton11" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/billpayment"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton12"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton12"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton12" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/billpayment"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton15"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20"
+                    app:srcCompat="@drawable/a" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/scan"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton16"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton14"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21"
+                    app:srcCompat="@drawable/a" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/cashin"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton17"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton15"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22"
+                    app:srcCompat="@drawable/a" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/cashout"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton16"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:srcCompat="@drawable/a" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/transfer"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton14"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton14"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton14" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/billpayment"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton15"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton15"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton15" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/cashin"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton16"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton16"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/cashout"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/floatingActionButton17"
+                    app:layout_constraintStart_toStartOf="@+id/floatingActionButton17"
+                    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton17" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/darkpurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.943"
+        app:menu="@menu/navigator" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#ffffff"
+        android:clickable="false"
+        android:focusable="true"
+        app:backgroundTint="#ffffff"
+        app:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:srcCompat="@drawable/a" />
+
+
+
 
 </android.support.constraint.ConstraintLayout>
